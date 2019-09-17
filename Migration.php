@@ -5,10 +5,12 @@ namespace denis303\codeigniter4;
 abstract class Migration extends \CodeIgniter\Database\Migration
 {
 
+    protected $charset = 'utf8';
+
+    protected $collate = 'utf8_general_ci';
+
     public function tableOptions(array $return = [])
     {
-        $collate = ;
-
         $driver = $this->forge->getConnection()->getPlatform();
 
         switch($driver)
@@ -16,8 +18,8 @@ abstract class Migration extends \CodeIgniter\Database\Migration
             case 'MySQLi':
                 return array_merge([
                     'ENGINE' => 'InnoDb',
-                    'CHARACTER SET' => $this->db->charset ? $this->db->charset : 'utf8',
-                    'COLLATE' => $this->db->DBCollat ? $this->db->DBCollat : 'utf8_general_ci'
+                    'CHARSET' => $this->db->charset ? $this->db->charset : $this->charset,
+                    'COLLATE' => $this->db->DBCollat ? $this->db->DBCollat : $this->collate
                 ], $return);
         }
 
