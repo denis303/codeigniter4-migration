@@ -2,7 +2,7 @@
 
 namespace denis303\codeigniter4;
 
-abstract class BaseMigration extends \CodeIgniter\Database\Migration
+abstract class Migration extends \CodeIgniter\Database\Migration
 {
 
     public function tableOptions(array $return = [])
