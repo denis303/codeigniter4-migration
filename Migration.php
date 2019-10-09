@@ -6,7 +6,7 @@
  */
 namespace denis303\codeigniter4;
 
-abstract class Migration extends \CodeIgniter\Database\Migration
+abstract class Migration extends BaseMigration
 {
 
     CONST COLUMN_CLASS = MigrationColumn::class;

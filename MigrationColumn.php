@@ -8,7 +8,7 @@ namespace denis303\codeigniter4;
 
 use ArrayAccess;
 
-class MigrationColumn implements ArrayAccess
+class MigrationColumn extends BaseMigrationColumn implements ArrayAccess
 {
 
     protected $_data = [];
@@ -47,6 +47,8 @@ class MigrationColumn implements ArrayAccess
 
     public function __construct($data = [])
     {
+        parent::__construct();
+
         $this->_data = $data;
     }
 
