@@ -1,29 +1,98 @@
 <?php
-
+/**
+ * @author denis303
+ * @license MIT
+ * @link http://denis303.com
+ */
 namespace denis303\codeigniter4;
 
 abstract class Migration extends \CodeIgniter\Database\Migration
 {
 
-    protected $charset = 'utf8';
+    CONST COLUMN_CLASS = MigrationColumn::class;
 
-    protected $collate = 'utf8_general_ci';
-
-    public function tableOptions(array $return = [])
+    public static function integer($constraint = null)
     {
-        $driver = $this->forge->getConnection()->getPlatform();
+        $class = static::COLUMN_CLASS;
 
-        switch($driver)
-        {
-            case 'MySQLi':
-                return array_merge([
-                    'ENGINE' => 'InnoDb',
-                    'CHARSET' => $this->db->charset ? $this->db->charset : $this->charset,
-                    'COLLATE' => $this->db->DBCollat ? $this->db->DBCollat : $this->collate
-                ], $return);
-        }
+        return $class::integer($constraint);
+    }
 
-        return $return;
+    public static function created()
+    {
+        $class = static::COLUMN_CLASS;
+
+        return $class::created();
+    }
+
+    public static function updated()
+    {
+        $class = static::COLUMN_CLASS;
+
+        return $class::updated();
+    }
+
+    public static function date()
+    {
+        $class = static::COLUMN_CLASS;
+
+        return $class::date();
+    }
+
+    public static function time()
+    {
+        $class = static::COLUMN_CLASS;
+
+        return $class::time();
+    }
+
+    public static function datetime()
+    {
+        $class = static::COLUMN_CLASS;
+
+        return $class::datetime();
+    }
+
+    public static function string($constraint = 255)
+    {
+        $class = static::COLUMN_CLASS;
+
+        return $class::string($constraint);
+    }
+
+    public static function text($constraint = 65535)
+    {
+        $class = static::COLUMN_CLASS;
+
+        return $class::text($constraint);
+    }
+
+    public static function boolean($default = 1)
+    {
+        $class = static::COLUMN_CLASS;
+
+        return $class::boolean($default);
+    }    
+
+    public static function char($constraint)
+    {
+        $class = static::COLUMN_CLASS;
+
+        return $class::char($constraint);
+    }
+
+    public static function decimal($constraint1, $constraint2)
+    {
+        $class = static::COLUMN_CLASS;
+
+        return $class::decimal($constraint1, $constraint2);
+    }
+
+    public static function primaryKey($constraint = null, $autoIncrement = true)
+    {
+        $class = static::COLUMN_CLASS;
+
+        return $class::primaryKey($constraint, $autoIncrement);
     }
 
 }
