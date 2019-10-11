@@ -29,6 +29,8 @@ class MigrationColumn extends BaseMigrationColumn implements ArrayAccess
 
     const TYPE_INT = 'INT';
 
+    const TYPE_TINYINT = 'TINYINT';
+
     const TYPE_VARCHAR = 'VARCHAR';
 
     const TYPE_CHAR = 'CHAR';
