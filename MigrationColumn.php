@@ -245,4 +245,11 @@ class MigrationColumn extends BaseMigrationColumn implements ArrayAccess
         return $return;
     }
 
+    public static function foreignKey($constraint = null)
+    {
+        $return = static::integer($constraint);
+
+        return $return;
+    }
+
 }

@@ -95,4 +95,11 @@ abstract class Migration extends BaseMigration
         return $class::primaryKey($constraint, $autoIncrement);
     }
 
+    public static function foreignKey($constraint = null)
+    {
+        $class = static::COLUMN_CLASS;
+
+        return $class::foreignKey($constraint);
+    }    
+
 }
