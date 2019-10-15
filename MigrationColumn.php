@@ -161,7 +161,7 @@ class MigrationColumn extends BaseMigrationColumn implements ArrayAccess
         return $this;
     }
 
-    public static function factory($type = null, $constraint = null)
+    public static function factory($type = null, $constraint = null, $null = true)
     {
         $class = get_called_class();
 
@@ -175,6 +175,18 @@ class MigrationColumn extends BaseMigrationColumn implements ArrayAccess
         if ($constraint)
         {
             $return->constraint($constraint);
+        }
+
+        if ($null !== null)
+        {
+            if ($null)
+            {
+                $return->null();
+            }
+            else
+            {
+                $return->notNull();
+            }
         }
 
         return $return;
