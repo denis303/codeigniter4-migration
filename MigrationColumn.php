@@ -47,6 +47,8 @@ class MigrationColumn extends BaseMigrationColumn implements ArrayAccess
 
     const TYPE_DATETIME = 'DATETIME';
 
+    const TYPE_DECIMAL = 'DECIMAL';
+
     public function __construct($data = [])
     {
         parent::__construct();
