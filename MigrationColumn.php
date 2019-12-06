@@ -31,6 +31,10 @@ class MigrationColumn extends BaseMigrationColumn implements ArrayAccess
 
     const TYPE_TINYINT = 'TINYINT';
 
+    const TYPE_SMALLINT = 'SMALLINT';
+
+    const TYPE_MEDIUMINT = 'MEDIUMINT';
+
     const TYPE_VARCHAR = 'VARCHAR';
 
     const TYPE_CHAR = 'CHAR';
@@ -197,6 +201,21 @@ class MigrationColumn extends BaseMigrationColumn implements ArrayAccess
     public static function integer($constraint = null)
     {
         return static::factory(static::TYPE_INT, $constraint);
+    }
+
+    public static function tinyInteger($constraint = null)
+    {
+        return static::factory(static::TYPE_TINYINT, $constraint);
+    }
+
+    public static function smallInteger($constraint = null)
+    {
+        return static::factory(static::TYPE_SMALLINT, $constraint);
+    }
+
+    public static function mediumInteger($constraint = null)
+    {
+        return static::factory(static::TYPE_MEDIUMINT, $constraint);
     }
 
     public static function created()

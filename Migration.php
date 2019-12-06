@@ -18,6 +18,27 @@ abstract class Migration extends BaseMigration
         return $class::integer($constraint);
     }
 
+    public static function tinyInteger($constraint = null)
+    {
+        $class = static::COLUMN_CLASS;
+
+        return $class::tinyInteger($constraint);
+    }
+
+    public static function smallInteger($constraint = null)
+    {
+        $class = static::COLUMN_CLASS;
+
+        return $class::smallInteger($constraint);
+    }
+
+    public static function mediumInteger($constraint = null)
+    {
+        $class = static::COLUMN_CLASS;
+
+        return $class::mediumInteger($constraint);
+    }
+
     public static function created()
     {
         $class = static::COLUMN_CLASS;
